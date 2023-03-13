@@ -23,6 +23,10 @@ app.get('/signup', (req, res) => {
 app.get('/home', (req, res) => {
     res.render('home')
 })
+app.get('/logout', (req,res) => {
+    res.render('/')
+})
+
 
 app.post('/signup', async (req, res) => {
     const data = {
@@ -35,8 +39,7 @@ app.post('/signup', async (req, res) => {
 
     })
 
-    app.post('/login', async (req, res) => {
-
+app.post('/login', async (req, res) => {
         try {
             const check = await collection.findOne({ name: req.body.name })
     
@@ -47,7 +50,6 @@ app.post('/signup', async (req, res) => {
             else {
                 res.send("incorrect password")
             }
-    
     
         } catch (e) {
     
