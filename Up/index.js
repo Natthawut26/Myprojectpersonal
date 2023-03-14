@@ -16,7 +16,7 @@ app.set("views",templatePath)
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'src/Images')
+        cb(null,'Images')
     },
     filename:(req,file,cb)=>{
         ff=file
@@ -34,15 +34,12 @@ app.get("/",async(req,res)=>{
     res.render('home',{arr:data})
 })
 
-// app.delete('/files/:id', async(req, res) => {
-//     gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
-//       if (err) {
-//         return res.status(404).json({ err: err });
-//       }
-  
-//       res.redirect('/');
-//     });
-//   });
+// app.delete("/file/id:",async(req,res)=>{
+//     const data=await collection.find()
+//     arr=data
+//     res.render('home',{arr:data})
+// })
+
   
 
 app.post("/",upload.single("image"),async(req,res)=>{
@@ -56,7 +53,7 @@ app.post("/",upload.single("image"),async(req,res)=>{
 
             arr.push(data)
             await collection.insertMany([data])
-            await collection.deleteMany({})
+            // await collection.deleteMany({})
 
         }
         else{

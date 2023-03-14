@@ -20,6 +20,9 @@
     }
 
     form {
+        
+        margin: 50;
+        padding: 50;
         text-align: left;
         margin-bottom: 30px;
     }
@@ -32,13 +35,15 @@
     
         <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" style="color: aliceblue; font-size: 1rem" aria-current="page" href="/">Logout</a>
+            <a class="nav-link active" style="color: aliceblue; font-size: 1rem" aria-current="page" href="login.hbs">Logout</a>
         </li>
         </ul>
-    <h1>Image Gallery</h1> 
+    <h1>Libary Storage</h1> 
     <form action="/" method="post" enctype="multipart/form-data">
         <input type="file" name="image" id="file" >
-        <input type="submit" value="Save" name="save" id="sub" style="width: 50px; height: 40px;background: rgb(219, 83, 78);border-radius: 12px;box-shadow: 0 5px 10px rgb(89, 94, 94) ; align-items: center; ">
+        <input type="submit" value="upload" name="save" id="sub" style="width: 70px; height: 40px;background: rgb(219, 83, 78);border-radius: 12px;box-shadow: 0 5px 10px rgb(89, 94, 94) ; align-items: center; ">
+        <input type="text">
+        <input type="submit" value="delete" name="delete" id="sub" style="width: 70px; height: 40px;background: rgb(219, 83, 78);border-radius: 12px;box-shadow: 0 5px 10px rgb(89, 94, 94) ; align-items: center; " >
     </form>
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
         {{#each arr}}

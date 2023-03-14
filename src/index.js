@@ -49,11 +49,13 @@ app.post('/login', async (req, res) => {
     
             else {
                 res.send("incorrect password")
+               
             }
     
         } catch (e) {
     
             res.send("wrong details")
+           
         }
     })
 
